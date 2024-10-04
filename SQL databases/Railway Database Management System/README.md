@@ -37,17 +37,17 @@ The project consists of the following tables:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/hospital-database-management.git
-
-SELECT P.Fname, P.Lname
-FROM Patients P
-JOIN Appointment A ON P.PatientID = A.PatientID
-JOIN Doctors D ON A.DoctorID = D.DoctorID
-WHERE D.Fname = 'John' AND D.Lname = 'Doe';
-
-SELECT D.Fname, D.Lname, AVG(DATEDIFF(MINUTE, A.Date, A.Endtime)) AS Avg_Appointment_Duration
-FROM Appointment A
-JOIN Doctors D ON A.DoctorID = D.DoctorID
-GROUP BY D.DoctorID, D.Fname, D.Lname;
+    ```sql
+   SELECT P.Fname, P.Lname
+   FROM Patients P
+   JOIN Appointment A ON P.PatientID = A.PatientID
+   JOIN Doctors D ON A.DoctorID = D.DoctorID
+   WHERE D.Fname = 'John' AND D.Lname = 'Doe';
+        ```bash
+      SELECT D.Fname, D.Lname, AVG(DATEDIFF(MINUTE, A.Date, A.Endtime)) AS Avg_Appointment_Duration
+      FROM Appointment A
+      JOIN Doctors D ON A.DoctorID = D.DoctorID
+      GROUP BY D.DoctorID, D.Fname, D.Lname;
 
 ## Technologies Used
 - SQL Server: Used for database design and query management.
