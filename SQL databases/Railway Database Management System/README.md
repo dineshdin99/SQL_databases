@@ -43,11 +43,11 @@ The project consists of the following tables:
    JOIN Appointment A ON P.PatientID = A.PatientID
    JOIN Doctors D ON A.DoctorID = D.DoctorID
    WHERE D.Fname = 'John' AND D.Lname = 'Doe';
-        ```bash
-      SELECT D.Fname, D.Lname, AVG(DATEDIFF(MINUTE, A.Date, A.Endtime)) AS Avg_Appointment_Duration
-      FROM Appointment A
-      JOIN Doctors D ON A.DoctorID = D.DoctorID
-      GROUP BY D.DoctorID, D.Fname, D.Lname;
+   
+   SELECT D.Fname, D.Lname, AVG(DATEDIFF(MINUTE, A.Date, A.Endtime)) AS Avg_Appointment_Duration
+   FROM Appointment A
+   JOIN Doctors D ON A.DoctorID = D.DoctorID
+   GROUP BY D.DoctorID, D.Fname, D.Lname;
 
 ## Technologies Used
 - SQL Server: Used for database design and query management.
