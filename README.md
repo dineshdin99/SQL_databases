@@ -1,6 +1,6 @@
 # SQL_databases
 
-# Tools Used
+## Tools Used
 
 1.SQL(Stuructured Query Language)
 
