@@ -11,7 +11,6 @@ The **Hospital Database Management System (HMS)** is designed to streamline heal
 - [Queries](#queries)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## About the Project
 
@@ -38,4 +37,29 @@ The project consists of the following tables:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/hospital-database-management.git
+
+SELECT P.Fname, P.Lname
+FROM Patients P
+JOIN Appointment A ON P.PatientID = A.PatientID
+JOIN Doctors D ON A.DoctorID = D.DoctorID
+WHERE D.Fname = 'John' AND D.Lname = 'Doe';
+
+SELECT D.Fname, D.Lname, AVG(DATEDIFF(MINUTE, A.Date, A.Endtime)) AS Avg_Appointment_Duration
+FROM Appointment A
+JOIN Doctors D ON A.DoctorID = D.DoctorID
+GROUP BY D.DoctorID, D.Fname, D.Lname;
+
+## Technologies Used
+- SQL Server: Used for database design and query management.
+-T-SQL: Used for creating stored procedures, triggers, and complex queries.
+-Git: For version control and project collaboration.
+
+## Contributing
+-->Contributions are welcome! Please follow these steps to contribute:
+
+-Fork the repository.
+-Create a feature branch: git checkout -b feature-name.
+-Commit your changes: git commit -m 'Add some feature'.
+-Push to the branch: git push origin feature-name.
+-Open a pull request.
 
